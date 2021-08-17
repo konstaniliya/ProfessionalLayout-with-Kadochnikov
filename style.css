@@ -1355,7 +1355,7 @@ summary:focus {
 }
 
 .regListItem:before {
-  content: url(img/twitter.png);
+  content: url(img/tip.svg);
   margin-right: 20px;
 }
 
