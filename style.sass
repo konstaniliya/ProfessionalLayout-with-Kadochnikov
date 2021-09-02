@@ -1,11 +1,14 @@
-
-
 $theme-color: rgb(255, 120, 143)
 $regFormWidth: 360px
-
+$dark_theme: #222222
+$containerWidth: 1140px
 @import card
 @import shoppingCart
 @import registration
+
+header
+    padding: 0 calc(50% - 570px)
+    background: $dark_theme
 
 *
     margin: 0
@@ -14,12 +17,13 @@ $regFormWidth: 360px
     font-style: normal
     font-weight: normal
     outline-style: none
+    transition: all .3s
+
 .container
-    max-width: 1140px
+    max-width: $containerWidth
     margin: 0 auto
 
 .frontHeader
-    background: #222222
     padding-top: 18px
     padding-bottom: 18px
 
@@ -50,8 +54,8 @@ $regFormWidth: 360px
 
 .mainText
     text-transform: uppercase
-    width: 500px
-    color: #222222
+    width: 370px
+    color: $dark_theme
     padding-left: 13px
     border-left-style: solid
     border-left-width: 16px
@@ -66,7 +70,7 @@ $regFormWidth: 360px
     font-weight: 700
     font-size: 32px
     line-height: 38px
-    color: #222222
+    color: $dark_theme
 
 .pinkText
     color: $theme-color
@@ -92,6 +96,11 @@ $regFormWidth: 360px
     justify-content: space-between
     flex-wrap: wrap
     padding-bottom: 30px
+    gap: 5px
+.card:hover
+    transform: scale(1.05)
+.cardsBottom:hover
+    transform: scale(1.05)
 
 .card
     position: relative
@@ -121,7 +130,7 @@ $regFormWidth: 360px
     text-transform: uppercase
     position: absolute
     top: 105px
-    left: 103px
+    left: 95px
     min-width: 154px
     height: 50px
     text-align: center
@@ -140,7 +149,7 @@ $regFormWidth: 360px
 .blackText
     font-size: 30px
     line-height: 36px
-    color: #222222
+    color: $dark_theme
 
 .greyText
     font-size: 14px
@@ -165,11 +174,11 @@ $regFormWidth: 360px
     background: #F8F8F8
     width: 360px
     margin-bottom: 26px
-    position: relative
 .cardGood:hover
     box-shadow: 0 5px 8px rgba(0,0,0,0.16)
+    transform: scale(1.03)
 .cardGood:hover .catalogImage
-    filter: brightness(30%)
+    filter: brightness(60%)
 
 .cardLink
     text-decoration: none
@@ -242,6 +251,9 @@ $regFormWidth: 360px
     text-align: center
     max-width: 211px
     margin-bottom: 95px
+.BrowseButton:hover
+    box-shadow: 0px 0px 6px 5px $theme-color
+    transform: scale(1.05)
 .textButton
     text-decoration: none
 
@@ -264,7 +276,7 @@ $regFormWidth: 360px
 .infoBlock
     padding-top: 104px
     padding-bottom: 104px
-    background-color: #222222
+    background-color: $dark_theme
 
 .addInfo
     display: flex
@@ -322,8 +334,9 @@ $regFormWidth: 360px
     text-align: center
     font-size: 20px
     line-height: 24px
-
     color: #222224
+.helloImage:hover .textHello
+    transform: scale(1.05)
 .subscriptionForm
     display: flex
 
@@ -337,6 +350,7 @@ $regFormWidth: 360px
     text-align: center
     color: #FFFFFF
     padding: 12px 32px 12px 32px
+    cursor: pointer
 
 .buttonCatalog
     background: #1f40ff
@@ -359,7 +373,8 @@ $regFormWidth: 360px
     font-size: 16px
     line-height: 26px
     text-align: center
-    padding-right: 104px
+    padding-right: 40px
+    padding-left: 24px
     cursor: text
 
 .emailArea
@@ -401,9 +416,10 @@ $regFormWidth: 360px
 .socialCards:hover
     background-color: #08af8d
     filter: invert(100%)
+    transform: scale(1.1)
 
 footer
-    background-color: #222222
+    background-color: $dark_theme
 
 .footerContent
     display: flex
@@ -419,10 +435,13 @@ footer
     border-radius: 5px
     position: absolute
     top: 60px
-    right: -190px
+    right: -170px
     left: auto
-    z-index: 1
-
+    z-index: 9999999999999
+.closeImg
+    position: absolute
+    left: auto
+    right: 0px
 .userImg
     width: 36px
     height: 36px
@@ -430,6 +449,8 @@ footer
 .newList
     position: relative
     padding: 12px
+.newList:hover
+    transform: scale(1.1)
 
 .last:hover .mega-box
     right: 0
@@ -437,13 +458,18 @@ footer
 
 .mega-heading
     width: 235px
-    border-bottom: 1px solid #e8e8e8
-    padding: 8px
-    margin-bottom: 8px
+    margin-bottom: 24px
     font-size: 14px
-    font-weight: 400
+    font-weight: 700
     text-transform: uppercase
-
+.mega-heading-details
+    color: $theme-color
+    width: 235px
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+    margin-bottom: 10px
+    margin-top: 16px
 .mega-link
     display: block
     color: #646464
@@ -451,12 +477,13 @@ footer
     font-weight: 200
     text-decoration: none
     line-height: 28px
+    padding-left: 35px
 
 .mega-link:hover
     color: $theme-color
 
 .menu-item
-    margin-right: 46px
+    position: relative
 
 .menu-item:last-of-type
     margin-right: 0
@@ -495,6 +522,8 @@ footer
 .searchEngine
     position: relative
     margin-left: 16px
+.searchEngine:hover
+    transform: scale(1.2)
 
 .leftMenu
     display: flex
@@ -531,11 +560,6 @@ summary:focus
     font-weight: 400
     text-transform: uppercase
 
-
-.navMenu:hover
-    color: $theme-color
-    font-weight: bold
-
 .pinkTextCatalog
     font-weight: 700
     font-size: 14px
@@ -567,7 +591,7 @@ summary:focus
 .filterCard:hover .mega-box
     display: flex
     top: 25px
-    right: -215px
+    right: -198px
 .filterBlock
     display: flex
     align-items: baseline
@@ -576,7 +600,7 @@ summary:focus
 .filterBlock:hover .mega-box
     display: flex
     top: 26px
-    right: -240px
+    right: -225px
     left: auto
 /*Footer press down*/
 .wrapper
@@ -620,7 +644,6 @@ summary:focus
 
 .CardCatalogPage
     background-color: transparent
-
 
 // registration
 .registrationHeader
@@ -709,3 +732,26 @@ summary:focus
     src: url("fonts/Lato-Regular.ttf") format('truetype')
     font-style: normal
     font-weight: normal
+
+// Media query, adjust for different resolutions
+@media (max-width: 1100px)
+    .comtainer
+        max-width: $containerWidth*0.7
+    .img1
+        width: 232px
+    .img2
+        width: 735px
+    .textCard
+        transform: scale(0.7)
+        top: 70px
+        left: 30px
+    .downText
+        transform: scale(0.7)
+        left: 300px
+        top: 25px
+    .logoMan
+        width: 368px
+    .logo
+        min-height: 351px
+    .logoContent
+        height: 351px

@@ -101,11 +101,6 @@
   margin-bottom: 65px;
 }
 
-.BrowseButton:hover {
-  -webkit-box-shadow: 0px 0px 14px 3px #03fdfd59;
-          box-shadow: 0px 0px 14px 3px #03fdfd59;
-}
-
 .megaHeadingCart {
   width: 90px;
 }
@@ -209,6 +204,19 @@
   color: #ff788f;
 }
 
+.catalog-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 49px;
+  margin-top: 130px;
+}
+
 /*Shopping Cart*/
 .cartContent {
   display: -webkit-box;
@@ -244,6 +252,8 @@
 .item:hover {
   -webkit-box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
           box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .itemTop {
@@ -457,6 +467,12 @@
           box-shadow: 1px 0px 10px 9px #ff788f;
 }
 
+.cartButton2:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background-color: #e8c1ff;
+}
+
 .registrationHeader {
   color: #5e5e5e;
   padding-bottom: 21px;
@@ -595,6 +611,11 @@
   padding-left: 30px;
 }
 
+header {
+  padding: 0 calc(50% - 570px);
+  background: #222222;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -602,6 +623,8 @@
   font-style: normal;
   font-weight: normal;
   outline-style: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
 .container {
@@ -610,7 +633,6 @@
 }
 
 .frontHeader {
-  background: #222222;
   padding-top: 18px;
   padding-bottom: 18px;
 }
@@ -656,7 +678,7 @@
 
 .mainText {
   text-transform: uppercase;
-  width: 500px;
+  width: 370px;
   color: #222222;
   padding-left: 13px;
   border-left-style: solid;
@@ -712,6 +734,17 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-bottom: 30px;
+  gap: 5px;
+}
+
+.card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.cardsBottom:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .card {
@@ -749,7 +782,7 @@
   text-transform: uppercase;
   position: absolute;
   top: 105px;
-  left: 103px;
+  left: 95px;
   min-width: 154px;
   height: 50px;
   text-align: center;
@@ -805,17 +838,18 @@
   background: #F8F8F8;
   width: 360px;
   margin-bottom: 26px;
-  position: relative;
 }
 
 .cardGood:hover {
   -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
           box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 .cardGood:hover .catalogImage {
-  -webkit-filter: brightness(30%);
-          filter: brightness(30%);
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
 }
 
 .cardLink {
@@ -917,6 +951,13 @@
   text-align: center;
   max-width: 211px;
   margin-bottom: 95px;
+}
+
+.BrowseButton:hover {
+  -webkit-box-shadow: 0px 0px 6px 5px #ff788f;
+          box-shadow: 0px 0px 6px 5px #ff788f;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .textButton {
@@ -1051,6 +1092,11 @@
   color: #222224;
 }
 
+.helloImage:hover .textHello {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .subscriptionForm {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1067,6 +1113,7 @@
   text-align: center;
   color: #FFFFFF;
   padding: 12px 32px 12px 32px;
+  cursor: pointer;
 }
 
 .buttonCatalog {
@@ -1091,7 +1138,8 @@
   font-size: 16px;
   line-height: 26px;
   text-align: center;
-  padding-right: 104px;
+  padding-right: 40px;
+  padding-left: 24px;
   cursor: text;
 }
 
@@ -1155,6 +1203,8 @@
   background-color: #08af8d;
   -webkit-filter: invert(100%);
           filter: invert(100%);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 footer {
@@ -1182,9 +1232,15 @@ footer {
   border-radius: 5px;
   position: absolute;
   top: 60px;
-  right: -190px;
+  right: -170px;
   left: auto;
-  z-index: 1;
+  z-index: 9999999999999;
+}
+
+.closeImg {
+  position: absolute;
+  left: auto;
+  right: 0px;
 }
 
 .userImg {
@@ -1197,6 +1253,11 @@ footer {
   padding: 12px;
 }
 
+.newList:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .last:hover .mega-box {
   right: 0;
   left: auto;
@@ -1204,12 +1265,20 @@ footer {
 
 .mega-heading {
   width: 235px;
-  border-bottom: 1px solid #e8e8e8;
-  padding: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 700;
   text-transform: uppercase;
+}
+
+.mega-heading-details {
+  color: #ff788f;
+  width: 235px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 16px;
 }
 
 .mega-link {
@@ -1219,6 +1288,7 @@ footer {
   font-weight: 200;
   text-decoration: none;
   line-height: 28px;
+  padding-left: 35px;
 }
 
 .mega-link:hover {
@@ -1226,7 +1296,7 @@ footer {
 }
 
 .menu-item {
-  margin-right: 46px;
+  position: relative;
 }
 
 .menu-item:last-of-type {
@@ -1279,6 +1349,11 @@ footer {
 .searchEngine {
   position: relative;
   margin-left: 16px;
+}
+
+.searchEngine:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .leftMenu {
@@ -1344,11 +1419,6 @@ summary:focus {
   text-transform: uppercase;
 }
 
-.navMenu:hover {
-  color: #ff788f;
-  font-weight: bold;
-}
-
 .pinkTextCatalog {
   font-weight: 700;
   font-size: 14px;
@@ -1393,7 +1463,7 @@ summary:focus {
   display: -ms-flexbox;
   display: flex;
   top: 25px;
-  right: -215px;
+  right: -198px;
 }
 
 .filterBlock {
@@ -1412,7 +1482,7 @@ summary:focus {
   display: -ms-flexbox;
   display: flex;
   top: 26px;
-  right: -240px;
+  right: -225px;
   left: auto;
 }
 
@@ -1639,5 +1709,38 @@ summary:focus {
   src: url("fonts/Lato-Regular.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
+}
+
+@media (max-width: 1100px) {
+  .comtainer {
+    max-width: 798px;
+  }
+  .img1 {
+    width: 232px;
+  }
+  .img2 {
+    width: 735px;
+  }
+  .textCard {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    top: 70px;
+    left: 30px;
+  }
+  .downText {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    left: 300px;
+    top: 25px;
+  }
+  .logoMan {
+    width: 368px;
+  }
+  .logo {
+    min-height: 351px;
+  }
+  .logoContent {
+    height: 351px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
