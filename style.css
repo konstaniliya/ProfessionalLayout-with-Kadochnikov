@@ -34,10 +34,13 @@
 .goodSelect {
   background-color: #ffffff;
   padding: 32px 0 32px 0;
-  margin-bottom: 62px;
   -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
           box-shadow: 0 5px 8px rgba(0, 0, 0, 0.16);
   z-index: 1;
+}
+
+.goodSelect_outside {
+  margin-bottom: 62px;
 }
 
 .cardMainHeader {
@@ -213,7 +216,10 @@
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 49px;
+}
+
+.catalog-card_outside {
+  margin-bottom: 130px;
   margin-top: 130px;
 }
 
@@ -326,10 +332,6 @@
   border: 1px solid #9c9999;
 }
 
-.cartButtonText:focus {
-  outline-style: none;
-}
-
 .cartControls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -370,10 +372,6 @@
           box-shadow: 0px 0px 4px 0px black;
 }
 
-.formCartItem:focus {
-  outline-style: none;
-}
-
 .shippingButton {
   padding: 10px 10px;
   background-color: transparent;
@@ -387,10 +385,6 @@
   -webkit-box-shadow: 0px 0px 4px 0px black;
           box-shadow: 0px 0px 4px 0px black;
   cursor: pointer;
-}
-
-.shippingButton:focus {
-  outline-style: none;
 }
 
 .shipping {
@@ -539,10 +533,6 @@
           box-shadow: 0px 0px 4px 0px black;
 }
 
-.regInput:focus {
-  outline-style: none;
-}
-
 .sex {
   margin-bottom: 16px;
 }
@@ -569,10 +559,6 @@
   -webkit-box-shadow: 1px 0px 10px 9px #e8c1ff;
           box-shadow: 1px 0px 10px 9px #e8c1ff;
   cursor: pointer;
-}
-
-.buttonReg:focus {
-  outline-style: none;
 }
 
 .registrationArticle {
@@ -612,7 +598,6 @@
 }
 
 header {
-  padding: 0 calc(50% - 570px);
   background: #222222;
 }
 
@@ -623,8 +608,10 @@ header {
   font-style: normal;
   font-weight: normal;
   outline-style: none;
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  -webkit-transition: color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
 }
 
 .container {
@@ -691,6 +678,11 @@ header {
   margin-bottom: 96px;
 }
 
+.cardsBottom:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .text {
   text-transform: uppercase;
   font-weight: 700;
@@ -737,18 +729,13 @@ header {
   gap: 5px;
 }
 
+.card {
+  position: relative;
+}
+
 .card:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-}
-
-.cardsBottom:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-.card {
-  position: relative;
 }
 
 .imgHello {
@@ -852,6 +839,12 @@ header {
           filter: brightness(60%);
 }
 
+.cardGood:hover .add-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .cardLink {
   text-decoration: none;
   display: block;
@@ -912,6 +905,11 @@ header {
           align-items: center;
 }
 
+.add:hover {
+  -webkit-box-shadow: 0 0 10px #ffffff;
+          box-shadow: 0 0 10px #ffffff;
+}
+
 .add-box {
   display: none;
   position: absolute;
@@ -920,17 +918,6 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-}
-
-.cardGood:hover .add-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.add:hover {
-  -webkit-box-shadow: 0 0 10px #ffffff;
-          box-shadow: 0 0 10px #ffffff;
 }
 
 .buttonText {
@@ -983,6 +970,14 @@ header {
   margin-bottom: 28px;
 }
 
+.imgLittle--lorry {
+  margin-bottom: 28px;
+  -webkit-animation: LorryDrive 2s infinite;
+          animation: LorryDrive 2s infinite;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
 .infoBlock {
   padding-top: 104px;
   padding-bottom: 104px;
@@ -1011,6 +1006,33 @@ header {
           align-items: center;
 }
 
+.delivery:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+@-webkit-keyframes LorryDrive {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
+@keyframes LorryDrive {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+
 .sales {
   max-width: 360px;
   display: -webkit-box;
@@ -1025,6 +1047,16 @@ header {
           align-items: center;
 }
 
+.sales:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.sales:hover .imgLittle {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .quality {
   max-width: 360px;
   display: -webkit-box;
@@ -1037,6 +1069,16 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.quality:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.quality:hover .imgLittle {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .subscription {
@@ -1085,16 +1127,16 @@ header {
           align-items: center;
 }
 
+.helloImage:hover .textHello {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .textHello {
   text-align: center;
   font-size: 20px;
   line-height: 24px;
   color: #222224;
-}
-
-.helloImage:hover .textHello {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
 }
 
 .subscriptionForm {
@@ -1152,24 +1194,9 @@ header {
   font-size: 16px;
   line-height: 26px;
   text-align: center;
-  padding: 12px 104px 12px 30px;
+  padding: 12px 10px 12px 30px;
   cursor: text;
-}
-
-.emailArea:focus {
-  outline-style: none;
-}
-
-.button:focus {
-  outline-style: none;
-}
-
-.searchArea:focus {
-  outline-style: none;
-}
-
-.buttonCatalog:focus {
-  outline-style: none;
+  width: 250px;
 }
 
 .form {
@@ -1195,8 +1222,8 @@ header {
   width: 32px;
   height: 32px;
   background-color: #ffffff;
-  padding: 8px 12px;
-  margin-right: 7px;
+  padding: 3px 3px;
+  margin-right: 3px;
 }
 
 .socialCards:hover {
@@ -1234,7 +1261,6 @@ footer {
   top: 60px;
   right: -170px;
   left: auto;
-  z-index: 9999999999999;
 }
 
 .closeImg {
@@ -1256,6 +1282,12 @@ footer {
 .newList:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.newList:hover .mega-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .last:hover .mega-box {
@@ -1295,6 +1327,19 @@ footer {
   color: #ff788f;
 }
 
+.mega-link:hover .addContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .menu-item {
   position: relative;
 }
@@ -1316,12 +1361,6 @@ footer {
   left: 36px;
   border-left: 1px solid #e8e8e8;
   border-top: 1px solid #e8e8e8;
-}
-
-.newList:hover .mega-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .rightMenuList {
@@ -1398,19 +1437,6 @@ summary:focus {
   display: none;
 }
 
-.mega-link:hover .addContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
 .catalogHeaderText {
   font-size: 24px;
   line-height: 29px;
@@ -1452,18 +1478,6 @@ summary:focus {
   font-weight: 400;
   padding-left: 10px;
   padding-right: 10px;
-}
-
-.filterCard:hover .filterText {
-  color: #ff788f;
-}
-
-.filterCard:hover .mega-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  top: 25px;
-  right: -198px;
 }
 
 .filterBlock {
@@ -1521,6 +1535,18 @@ summary:focus {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+}
+
+.filterCard:hover .filterText {
+  color: #ff788f;
+}
+
+.filterCard:hover .mega-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 25px;
+  right: -198px;
 }
 
 .navPageBlock {
@@ -1631,10 +1657,6 @@ summary:focus {
           box-shadow: 0px 0px 4px 0px black;
 }
 
-.regInput:focus {
-  outline-style: none;
-}
-
 .sex {
   margin-bottom: 16px;
 }
@@ -1661,10 +1683,6 @@ summary:focus {
   -webkit-box-shadow: 1px 0px 10px 9px #e8c1ff;
           box-shadow: 1px 0px 10px 9px #e8c1ff;
   cursor: pointer;
-}
-
-.buttonReg:focus {
-  outline-style: none;
 }
 
 .registrationArticle {
