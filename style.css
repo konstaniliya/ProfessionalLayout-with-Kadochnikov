@@ -230,9 +230,9 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .formCart {
@@ -301,6 +301,7 @@
   line-height: 29px;
   margin-bottom: 42px;
   width: 200px;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
@@ -362,8 +363,10 @@
 
 .formCartItem {
   margin-bottom: 21px;
-  width: 360px;
-  padding: 15px 0px 15px 17px;
+  width: 380px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15px 30px 15px 15px;
   border: 1px solid #A4A4A4;
 }
 
@@ -426,6 +429,7 @@
   text-align: right;
   background-color: #eaeaea;
   padding: 32px 46px;
+  margin-bottom: 96px;
 }
 
 .priceTextSummary {
@@ -676,6 +680,12 @@ header {
 .cardsBottom {
   position: relative;
   margin-bottom: 96px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .cardsBottom:hover {
@@ -720,13 +730,13 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-bottom: 30px;
-  gap: 5px;
+  gap: 30px;
 }
 
 .card {
@@ -808,9 +818,10 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-bottom: 49px;
@@ -972,8 +983,8 @@ header {
 
 .imgLittle--lorry {
   margin-bottom: 28px;
-  -webkit-animation: LorryDrive 2s infinite;
-          animation: LorryDrive 2s infinite;
+  -webkit-animation: LorryDrive 1s infinite;
+          animation: LorryDrive 1s infinite;
   -webkit-animation-timing-function: ease;
           animation-timing-function: ease;
 }
@@ -990,6 +1001,8 @@ header {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .delivery {
@@ -1013,23 +1026,19 @@ header {
 
 @-webkit-keyframes LorryDrive {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
   }
 }
 
 @keyframes LorryDrive {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: scale(2);
-            transform: scale(2);
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
   }
 }
 
@@ -1097,6 +1106,8 @@ header {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .textSubscription {
@@ -1104,7 +1115,7 @@ header {
   line-height: 167.2%;
   text-align: center;
   color: #222224;
-  width: 557px;
+  max-width: 557px;
   margin-bottom: 62px;
 }
 
@@ -1143,6 +1154,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 32px;
 }
 
 .button {
@@ -1719,6 +1731,11 @@ summary:focus {
 
 .buttonRegText {
   padding-left: 30px;
+}
+
+.logoImage {
+  margin-right: 36px;
+  margin-left: 36px;
 }
 
 /*Down here, working offline sometimes*/

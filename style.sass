@@ -66,6 +66,8 @@ header
 .cardsBottom
     position: relative
     margin-bottom: 96px
+    display: flex
+    justify-content: center
     &:hover
         transform: scale(1.05)
 
@@ -97,10 +99,10 @@ header
 
 .cardsHead
     display: flex
-    justify-content: space-between
+    justify-content: center
     flex-wrap: wrap
     padding-bottom: 30px
-    gap: 5px
+    gap: 30px
 
 .card
     position: relative
@@ -164,8 +166,10 @@ header
 
 .catalog
     display: flex
-    justify-content: space-between
+    justify-content: center
+    gap: 30px
     flex-wrap: wrap
+
     margin-bottom: 49px
 
 .catalogContent
@@ -277,7 +281,7 @@ header
     margin-bottom: 28px
     &--lorry
         margin-bottom: 28px
-        animation: LorryDrive 2s infinite
+        animation: LorryDrive 1s infinite
         animation-timing-function: ease
 .infoBlock
     padding-top: 104px
@@ -287,6 +291,7 @@ header
 .addInfo
     display: flex
     justify-content: space-around
+    flex-wrap: wrap
 
 .delivery
     max-width: 360px
@@ -297,10 +302,8 @@ header
         transform: scale(1.05)
 @keyframes LorryDrive
     0%
-        transform: rotate(0deg)
     100%
-        transform: scale(2)
-        
+        transform: scale(1.3)
 
 .sales
     max-width: 360px
@@ -333,13 +336,14 @@ header
 .subscriptionContent
     display: flex
     justify-content: space-around
+    flex-wrap: wrap
 
 .textSubscription
     font-size: 24px
     line-height: 167.2%
     text-align: center
     color: #222224
-    width: 557px
+    max-width: 557px
     margin-bottom: 62px
 
 .boldText
@@ -361,6 +365,7 @@ header
     color: #222224
 .subscriptionForm
     display: flex
+    margin-bottom: 32px
 
 .button
     background: $theme-color
@@ -733,6 +738,9 @@ summary:focus
     justify-content: space-between
 .buttonRegText
     padding-left: 30px
+.logoImage
+    margin-right: 36px
+    margin-left: 36px
 /*Down here, working offline sometimes*/
 @font-face
     font-family: 'Lato'

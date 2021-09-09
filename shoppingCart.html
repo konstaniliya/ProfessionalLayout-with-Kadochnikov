@@ -127,13 +127,6 @@
                     <h3 class="catalogHeaderText">
                         shopping cart
                     </h3>
-                    <nav class="breadCrumbs">
-                        <ul class="breadCrumbs_ul">
-                            <li class="breadCrumbs_li"><a href="#" class="breadCrumbs_link">HOME</a></li>
-                            <li class="breadCrumbs_li"><a href="#" class="breadCrumbs_link">MEN</a></li>
-                            <li class="breadCrumbs_li"><a href="#" class="breadCrumbs_link">SHOPPING CART</a></li>
-                        </ul>
-                    </nav>
                 </div>
             </div>
             <div class="cartContent container">
@@ -144,9 +137,7 @@
                                 <img src="img/card3.png" alt="item" class="itemImage">
                             <div class="itemText">
                                 <div class="itemTop">
-                                    <h2 class="itemHeader">
-                                        Mango people t-shirt
-                                    </h2>
+                                    <a href="card.html" class="itemHeader" target="_blank">Mango people t-shirt</a>
                                     <div class="imageBlock">
                                         <a href="#"><img src="img/cross.svg" alt="cross"></a>
                                     </div>
@@ -166,9 +157,7 @@
                                 <img src="img/card2.png" alt="item" class="itemImage">
                             <div class="itemText">
                                 <div class="itemTop">
-                                    <h2 class="itemHeader">
-                                        Mango people t-shirt
-                                    </h2>
+                                    <a href="card.html" class="itemHeader" target="_blank">Mango people t-shirt</a>
                                     <div class="imageBlock">
                                         <a href="#"><img src="img/cross.svg" alt="cross"></a>
                                     </div>
@@ -208,9 +197,9 @@
                         Shipping address
                     </h2>
                     <form action="#" class="formCart">
-                    <input type="text" placeholder="Country" class="formCartItem">
-                    <input type="text" placeholder="State" class="formCartItem">
-                    <input type="number" placeholder="Postcode/ZIP" class="formCartItem">
+                    <input type="text" placeholder="Country" class="formCartItem" required>
+                    <input type="text" placeholder="State" class="formCartItem" required>
+                    <input type="text" placeholder="Postcode/ZIP" class="formCartItem" required maxlength="6">
                         <button type="submit" class="shippingButton">Get a quote</button>
                     </form>
                     <div class="summaryContent">
