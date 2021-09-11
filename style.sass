@@ -56,7 +56,7 @@ header
 
 .mainText
     text-transform: uppercase
-    width: 370px
+    max-width: 370px
     color: $dark_theme
     padding-left: 13px
     border-left-style: solid
@@ -144,8 +144,7 @@ header
 
 .downText
     position: absolute
-    left: 491px
-    top: 65px
+    top: 50px
     color: #FBFBFB
     text-align: center
 
@@ -353,7 +352,7 @@ header
     text-transform: uppercase
 
 .helloImage
-    width: 360px
+    max-width: 360px
     display: flex
     flex-direction: column
     align-items: center
@@ -427,6 +426,7 @@ header
     font-size: 16px
     line-height: 19px
     color: #FBFBFB
+    margin-bottom: 30px
 
 .socialCards
     width: 32px
@@ -447,6 +447,8 @@ footer
     justify-content: space-between
     padding: 24px 16px
     align-items: center
+    flex-wrap: wrap
+    gap: 30px
 
 .mega-box
     display: none
@@ -743,6 +745,7 @@ summary:focus
 .logoImage
     margin-right: 36px
     margin-left: 36px
+
 /*Down here, working offline sometimes*/
 @font-face
     font-family: 'Lato'
@@ -756,23 +759,25 @@ summary:focus
         max-width: $containerWidth*0.7
     .img1
         width: 232px
-    .img2
-        width: 735px
     .textCard
         transform: scale(0.7)
         top: 70px
-        left: 30px
+        left: 40px
     .downText
         transform: scale(0.7)
-        left: 300px
-        top: 25px
+        top: 15px
     .logoMan
         width: 368px
     .logo
         min-height: 351px
     .logoContent
         height: 351px
+    .img2
+        width: 756px
 @media (max-width: 768px)
+    .pinkText
+        font-size: 16px
+        line-height: 20px
     .infoBlock
         padding-top: 64px
         padding-bottom: 64px
@@ -792,3 +797,46 @@ summary:focus
         margin-top: 0px
         margin-bottom: 0px
         margin-right: 0px
+    .img2
+        width: 232px
+    .downText
+        top: 0px
+    .emailArea
+        width: 190px
+    .text
+        font-size: 16px
+        line-height: 19px
+@media (max-width: 375px)
+    .img2
+        width: 232px
+    .textHeaderLogo
+        font-size: 38px
+        line-height: 46px
+    .text
+        font-size: 16px
+        line-height: 19px
+    .pinkText
+        font-size: 16px
+        line-height: 20px
+    .button
+        padding: 12px 22px 12px 22px
+    .emailArea
+        width: 150px
+    .last
+        display: none
+    .user
+        display: none
+    .textSubscription
+        font-size: 18px
+        line-height: 22px
+    .socialNetworks
+        order: 0
+        margin-bottom: 40px 
+        margin-top: 43px
+    .rights
+        order: 1
+    .footerContent
+        justify-content: center
+@media (max-width: 480px)
+    .footerContent
+        justify-content: center
