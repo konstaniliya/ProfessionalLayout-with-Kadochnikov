@@ -661,9 +661,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 764px;
 }
 
@@ -721,7 +721,6 @@ header {
   display: flex;
   -ms-flex-item-align: center;
       align-self: center;
-  margin-right: 331px;
   margin-top: 290px;
   margin-bottom: 381px;
 }
@@ -1017,6 +1016,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 48px;
 }
 
 .delivery:hover {
@@ -1054,6 +1054,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 48px;
 }
 
 .sales:hover {
@@ -1078,6 +1079,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 48px;
 }
 
 .quality:hover {
@@ -1091,7 +1093,7 @@ header {
 }
 
 .subscription {
-  background-image: url(img/background.jpg);
+  background-image: url(img/background.png);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 350px;
@@ -1776,6 +1778,38 @@ summary:focus {
   }
   .logoContent {
     height: 351px;
+  }
+}
+
+@media (max-width: 768px) {
+  .infoBlock {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .subscription {
+    padding-top: 57px;
+  }
+  .textHello {
+    padding-bottom: 48px;
+  }
+  .textSubscription {
+    margin-bottom: 27px;
+  }
+  .subscriptionForm {
+    margin-bottom: 140px;
+  }
+  .logoImage {
+    display: none;
+  }
+  .logoContent {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .brandTextContent {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
   }
 }
 /*# sourceMappingURL=style.css.map */

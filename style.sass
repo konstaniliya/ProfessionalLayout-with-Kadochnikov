@@ -51,7 +51,7 @@ header
 
 .logoContent
     display: flex
-    justify-content: space-between
+    justify-content: center
     height: 764px
 
 .mainText
@@ -93,7 +93,6 @@ header
     max-height: 93px
     display: flex
     align-self: center
-    margin-right: 331px
     margin-top: 290px
     margin-bottom: 381px
 
@@ -298,6 +297,7 @@ header
     display: flex
     flex-direction: column
     align-items: center
+    margin-bottom: 48px
     &:hover
         transform: scale(1.05)
 @keyframes LorryDrive
@@ -310,6 +310,7 @@ header
     display: flex
     flex-direction: column
     align-items: center
+    margin-bottom: 48px
     &:hover
         transform: scale(1.05)
     &:hover .imgLittle
@@ -320,12 +321,13 @@ header
     display: flex
     flex-direction: column
     align-items: center
+    margin-bottom: 48px
     &:hover
         transform: scale(1.05)
     &:hover .imgLittle
         transform: rotate(180deg)
 .subscription
-    background-image: url(img/background.jpg)
+    background-image: url(img/background.png)
     background-repeat: no-repeat
     background-size: cover
     min-height: 350px
@@ -770,3 +772,23 @@ summary:focus
         min-height: 351px
     .logoContent
         height: 351px
+@media (max-width: 768px)
+    .infoBlock
+        padding-top: 64px
+        padding-bottom: 64px
+    .subscription
+        padding-top: 57px
+    .textHello
+        padding-bottom: 48px
+    .textSubscription
+        margin-bottom: 27px
+    .subscriptionForm
+        margin-bottom: 140px
+    .logoImage
+        display: none
+    .logoContent
+        justify-content: center
+    .brandTextContent
+        margin-top: 0px
+        margin-bottom: 0px
+        margin-right: 0px
