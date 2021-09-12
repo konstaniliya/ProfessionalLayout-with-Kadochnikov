@@ -211,11 +211,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 30px;
 }
 
 .catalog-card_outside {
@@ -512,7 +513,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 62px;
+  margin: 0px 16px 62px 16px;
 }
 
 .regDataInput {
@@ -599,6 +600,12 @@
 
 .buttonRegText {
   padding-left: 30px;
+}
+
+@media (max-width: 1100px) {
+  .regContent {
+    gap: 30px;
+  }
 }
 
 header {
@@ -1752,7 +1759,7 @@ summary:focus {
 }
 
 @media (max-width: 1100px) {
-  .comtainer {
+  .container {
     max-width: 798px;
   }
   .img1 {
@@ -1830,6 +1837,13 @@ summary:focus {
     font-size: 16px;
     line-height: 19px;
   }
+  .regContent {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media (max-width: 375px) {
@@ -1880,6 +1894,13 @@ summary:focus {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .headerCatalogText {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
