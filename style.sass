@@ -1,20 +1,33 @@
+$theme-color: rgb(255, 120, 143)
+$regFormWidth: 360px
+$dark_theme: #222222
+$containerWidth: 1140px
+@import card
+@import shoppingCart
+@import registration
+
+header
+    background: $dark_theme
+
 *
     margin: 0
     padding: 0
     font-family: Lato, serif
     font-style: normal
     font-weight: normal
+    outline-style: none
+    transition: transform .3s,
+    box-shadow .3s,
+    color .1s,
+    rotate .3s,
+    background-color .3s 
 
-$theme-color: rgb(255, 120, 143)
-$regFormWidth: 360px
 .container
-    max-width: 1140px
+    max-width: $containerWidth
     margin: 0 auto
 
-.frontHeader
-    background: #222222
-    padding-top: 18px
-    padding-bottom: 18px
+.bar
+    padding-bottom: 0px
 
 .frontMenu
     display: flex
@@ -38,13 +51,13 @@ $regFormWidth: 360px
 
 .logoContent
     display: flex
-    justify-content: space-between
+    justify-content: center
     height: 764px
 
 .mainText
     text-transform: uppercase
-    width: 500px
-    color: #222222
+    max-width: 370px
+    color: $dark_theme
     padding-left: 13px
     border-left-style: solid
     border-left-width: 16px
@@ -53,13 +66,17 @@ $regFormWidth: 360px
 .cardsBottom
     position: relative
     margin-bottom: 96px
+    display: flex
+    justify-content: center
+    &:hover
+        transform: scale(1.05)
 
 .text
     text-transform: uppercase
     font-weight: 700
     font-size: 32px
     line-height: 38px
-    color: #222222
+    color: $dark_theme
 
 .pinkText
     color: $theme-color
@@ -76,18 +93,20 @@ $regFormWidth: 360px
     max-height: 93px
     display: flex
     align-self: center
-    margin-right: 331px
     margin-top: 290px
     margin-bottom: 381px
 
 .cardsHead
     display: flex
-    justify-content: space-between
+    justify-content: center
     flex-wrap: wrap
     padding-bottom: 30px
+    gap: 30px
 
 .card
     position: relative
+    &:hover
+        transform: scale(1.05)
 
 .imgHello
     margin-bottom: 30px
@@ -114,7 +133,7 @@ $regFormWidth: 360px
     text-transform: uppercase
     position: absolute
     top: 105px
-    left: 103px
+    left: 95px
     min-width: 154px
     height: 50px
     text-align: center
@@ -125,15 +144,14 @@ $regFormWidth: 360px
 
 .downText
     position: absolute
-    left: 491px
-    top: 65px
+    top: 50px
     color: #FBFBFB
     text-align: center
 
 .blackText
     font-size: 30px
     line-height: 36px
-    color: #222222
+    color: $dark_theme
 
 .greyText
     font-size: 14px
@@ -146,8 +164,10 @@ $regFormWidth: 360px
 
 .catalog
     display: flex
-    justify-content: space-between
+    justify-content: center
+    gap: 30px
     flex-wrap: wrap
+
     margin-bottom: 49px
 
 .catalogContent
@@ -158,11 +178,13 @@ $regFormWidth: 360px
     background: #F8F8F8
     width: 360px
     margin-bottom: 26px
-    position: relative
-.cardGood:hover
-    box-shadow: 0 5px 8px rgba(0,0,0,0.16)
-.cardGood:hover .catalogImage
-    filter: brightness(30%)
+    &:hover
+        box-shadow: 0 5px 8px rgba(0,0,0,0.16)
+        transform: scale(1.03)
+    &:hover .catalogImage
+        filter: brightness(60%)
+    &:hover .add-box
+        display: flex
 
 .cardLink
     text-decoration: none
@@ -210,16 +232,15 @@ $regFormWidth: 360px
     display: flex
     justify-content: center
     align-items: center
+    &:hover
+        box-shadow: 0 0 10px #ffffff
+
 .add-box
     display: none
     position: absolute
     top: 178px
     justify-content: center
     width: 100%
-.cardGood:hover .add-box
-    display: flex
-.add:hover
-    box-shadow: 0 0 10px #ffffff
 
 .buttonText
     font-size: 16px
@@ -235,6 +256,9 @@ $regFormWidth: 360px
     text-align: center
     max-width: 211px
     margin-bottom: 95px
+    &:hover
+        box-shadow: 0px 0px 6px 5px $theme-color
+        transform: scale(1.05)
 .textButton
     text-decoration: none
 
@@ -253,35 +277,56 @@ $regFormWidth: 360px
 
 .imgLittle
     margin-bottom: 28px
-
+    &--lorry
+        margin-bottom: 28px
+        animation: LorryDrive 1s infinite
+        animation-timing-function: ease
 .infoBlock
     padding-top: 104px
     padding-bottom: 104px
-    background-color: #222222
+    background-color: $dark_theme
 
 .addInfo
     display: flex
     justify-content: space-around
+    flex-wrap: wrap
 
 .delivery
     max-width: 360px
     display: flex
     flex-direction: column
     align-items: center
+    margin-bottom: 48px
+    &:hover
+        transform: scale(1.05)
+@keyframes LorryDrive
+    0%
+    100%
+        transform: scale(1.3)
 
 .sales
     max-width: 360px
     display: flex
     flex-direction: column
     align-items: center
+    margin-bottom: 48px
+    &:hover
+        transform: scale(1.05)
+    &:hover .imgLittle
+        transform: rotate(180deg)
 
 .quality
     max-width: 360px
     display: flex
     flex-direction: column
     align-items: center
+    margin-bottom: 48px
+    &:hover
+        transform: scale(1.05)
+    &:hover .imgLittle
+        transform: rotate(180deg)
 .subscription
-    background-image: url(img/background.jpg)
+    background-image: url(img/background.png)
     background-repeat: no-repeat
     background-size: cover
     min-height: 350px
@@ -292,13 +337,14 @@ $regFormWidth: 360px
 .subscriptionContent
     display: flex
     justify-content: space-around
+    flex-wrap: wrap
 
 .textSubscription
     font-size: 24px
     line-height: 167.2%
     text-align: center
     color: #222224
-    width: 557px
+    max-width: 557px
     margin-bottom: 62px
 
 .boldText
@@ -306,19 +352,21 @@ $regFormWidth: 360px
     text-transform: uppercase
 
 .helloImage
-    width: 360px
+    max-width: 360px
     display: flex
     flex-direction: column
     align-items: center
+    &:hover .textHello
+        transform: scale(1.05)
 
 .textHello
     text-align: center
     font-size: 20px
     line-height: 24px
-
     color: #222224
 .subscriptionForm
     display: flex
+    margin-bottom: 32px
 
 .button
     background: $theme-color
@@ -330,6 +378,7 @@ $regFormWidth: 360px
     text-align: center
     color: #FFFFFF
     padding: 12px 32px 12px 32px
+    cursor: pointer
 
 .buttonCatalog
     background: #1f40ff
@@ -352,7 +401,8 @@ $regFormWidth: 360px
     font-size: 16px
     line-height: 26px
     text-align: center
-    padding-right: 104px
+    padding-right: 40px
+    padding-left: 24px
     cursor: text
 
 .emailArea
@@ -364,18 +414,9 @@ $regFormWidth: 360px
     font-size: 16px
     line-height: 26px
     text-align: center
-    padding-right: 104px
-    padding-top: 12px
-    padding-bottom: 12px
+    padding: 12px 10px 12px 30px
     cursor: text
-.emailArea:focus
-    outline-style: none
-.button:focus
-    outline-style: none
-.searchArea:focus
-    outline-style: none
-.buttonCatalog:focus
-    outline-style: none
+    width: 250px
 .form
     display: flex
     flex-direction: column
@@ -385,25 +426,35 @@ $regFormWidth: 360px
     font-size: 16px
     line-height: 19px
     color: #FBFBFB
-
+    margin-bottom: 30px
+.hiddenHeader
+    display: none
 .socialCards
+    display: block
     width: 32px
     height: 32px
     background-color: #ffffff
-    padding: 4px 4px
-
-.socialCards:hover
-    background-color: #08af8d
-    filter: invert(100%)
-
+    color: #222222
+    font-size: 25px
+    margin-right: 7px
+    text-decoration: none
+    text-align: center
+    &:hover
+        background-color: $theme-color
+        color: #ffffff
+        transform: scale(1.1)
+.socialNetworks
+    display: flex
 footer
-    background-color: #222222
+    background-color: $dark_theme
 
 .footerContent
     display: flex
     justify-content: space-between
     padding: 24px 16px
     align-items: center
+    flex-wrap: wrap
+    gap: 30px
 
 .mega-box
     display: none
@@ -413,17 +464,38 @@ footer
     border-radius: 5px
     position: absolute
     top: 60px
-    right: -190px
+    right: -170px
     left: auto
-    z-index: 1
-
+.closeImg
+    position: absolute
+    left: auto
+    right: 0px
 .userImg
     width: 36px
     height: 36px
 
 .newList
-    position: relative
-    padding: 12px
+    &-bar
+        position: relative
+        padding: 20px 12px 20px 12px
+        &:hover
+            transform: scale(1.1)
+        &:hover .mega-box
+            display: flex
+    &-user
+        position: relative
+        padding: 12px
+        &:hover
+            transform: scale(1.1)
+        &:hover .mega-box
+            display: flex
+    &-last
+        position: relative
+        padding: 12px
+        &:hover
+            transform: scale(1.1)
+        &:hover .mega-box
+            display: flex
 
 .last:hover .mega-box
     right: 0
@@ -431,13 +503,18 @@ footer
 
 .mega-heading
     width: 235px
-    border-bottom: 1px solid #e8e8e8
-    padding: 8px
-    margin-bottom: 8px
+    margin-bottom: 24px
     font-size: 14px
-    font-weight: 400
+    font-weight: 700
     text-transform: uppercase
-
+.mega-heading-details
+    color: $theme-color
+    width: 235px
+    font-size: 14px
+    font-weight: 700
+    text-transform: uppercase
+    margin-bottom: 10px
+    margin-top: 16px
 .mega-link
     display: block
     color: #646464
@@ -445,12 +522,16 @@ footer
     font-weight: 200
     text-decoration: none
     line-height: 28px
-
-.mega-link:hover
-    color: $theme-color
+    padding-left: 35px
+    &:hover
+        color: $theme-color
+    &:hover .addContent
+        display: flex
+        flex-direction: column
+        align-items: flex-start
 
 .menu-item
-    margin-right: 46px
+    position: relative
 
 .menu-item:last-of-type
     margin-right: 0
@@ -467,9 +548,6 @@ footer
     left: 36px
     border-left: 1px solid #e8e8e8
     border-top: 1px solid #e8e8e8
-
-.newList:hover .mega-box
-    display: flex
 
 .rightMenuList
     list-style-type: none
@@ -489,6 +567,8 @@ footer
 .searchEngine
     position: relative
     margin-left: 16px
+    &:hover
+        transform: scale(1.2)
 
 .leftMenu
     display: flex
@@ -513,10 +593,6 @@ summary:focus
     background-color: #bfebfd
     box-shadow: 0 0 5px gray
     display: none
-.mega-link:hover .addContent
-    display: flex
-    flex-direction: column
-    align-items: flex-start
 
 .catalogHeaderText
     font-size: 24px
@@ -524,17 +600,6 @@ summary:focus
     color: $theme-color
     font-weight: 400
     text-transform: uppercase
-.catalogLinkText
-    font-weight: 300
-    font-size: 14px
-    line-height: 17px
-    color: #636363
-.navMenu
-    text-decoration: none
-
-.navMenu:hover
-    color: $theme-color
-    font-weight: bold
 
 .pinkTextCatalog
     font-weight: 700
@@ -562,12 +627,6 @@ summary:focus
     padding-left: 10px
     padding-right: 10px
 
-.filterCard:hover .filterText
-    color: $theme-color
-.filterCard:hover .mega-box
-    display: flex
-    top: 25px
-    right: -215px
 .filterBlock
     display: flex
     align-items: baseline
@@ -576,7 +635,7 @@ summary:focus
 .filterBlock:hover .mega-box
     display: flex
     top: 26px
-    right: -240px
+    right: -225px
     left: auto
 /*Footer press down*/
 .wrapper
@@ -597,6 +656,12 @@ summary:focus
     padding-bottom: 20px
     display: flex
     position: relative
+    &:hover .filterText
+        color: $theme-color
+    &:hover .mega-box
+        display: flex
+        top: 25px
+        right: -198px
 .navPageBlock
     border: 1px solid #EBEBEB
     width: 284px
@@ -620,257 +685,6 @@ summary:focus
 
 .CardCatalogPage
     background-color: transparent
-/*card page*/
-.goodDemoPhoto
-    background-color: rgb(247, 247, 247)
-    min-height: 777px
-    background-image: url("img/cartimage.png")
-    background-repeat: no-repeat
-    background-position: center
-    margin-bottom: -32px
-    display: flex
-    align-items: center
-    justify-content: space-between
-
-.registrationPage
-    margin-bottom: 96px
-.demoPhoto
-    display: flex
-    justify-content: center
-    margin-bottom: -20px
-.goodSelect
-    background-color: #ffffff
-    padding: 32px 0 32px 0
-    margin-bottom: 62px
-    box-shadow: 0 5px 8px rgba(0,0,0,0.16)
-    z-index: 1
-.cardMainHeader
-    margin-bottom: 12px
-    text-align: center
-    font-size: 14px
-.cardTextHeader
-    margin-bottom: 12px
-    margin-top: 12px
-    text-align: center
-    font-weight: 300
-    font-size: 18px
-    line-height: 22px
-    color: #4D4D4D
-    text-transform: uppercase
-.cardText
-    margin-bottom: 32px
-    font-weight: 300
-    font-size: 14px
-    line-height: 17px
-    text-align: center
-    color: #5E5E5E
-    max-width: 555px
-.cardPrice
-    font-weight: 300
-    font-size: 24px
-    line-height: 29px
-    color: $theme-color
-    border-bottom: 1px solid #EAEAEA
-    padding-bottom: 65px
-    text-align: center
-    width: 641px
-.cardPage 
-    margin-bottom: 64px
-.cartSelection
-    margin-bottom: 32px
-.filterButtonsCart
-    display: flex
-    justify-content: center
-    margin-bottom: 49px
-    margin-top: 65px
-.cartButton
-    margin-bottom: 65px
-.BrowseButton:hover
-    box-shadow: 0px 0px 14px 3px #03fdfd59
-.megaHeadingCart
-    width: 90px
-.filterCard:hover .mega-box-cart
-    top: 25px
-    right: -70px
-    left: auto
-
-.cartDescription
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-.buttonContent
-    display: flex
-    justify-content: space-around
-    color: #ffffff
-    padding: 12px
-    border: 2px solid $theme-color
-
-.arrowLeft
-    padding: 13px
-    background: rgba(42, 42, 42, 0.15)
-.arrowRight
-    padding: 13px
-    background: rgba(42, 42, 42, 0.15)
-    transform: rotate(180deg)
-.arrowLeft:hover
-    background-color: #08af8d
-    filter: invert(100%)
-.arrowRight:hover
-    background-color: #08af8d
-    filter: invert(100%)
-.basketImage
-    padding-right: 7px
-/*Shopping Cart*/
-.cartContent
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-between
-.formCart
-    display: flex
-    flex-direction: column
-    margin-bottom: 64px
-.item
-    display: flex
-    margin-bottom: 40px
-    width: 652px
-    height: 306px
-.item:hover
-    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13)
-.itemTop
-    display: flex
-    justify-content: space-between
-    width: 100%
-.itemsBlock
-    margin-bottom: 73px
-.itemText
-    margin-left: 31px
-    margin-top: 22px
-    padding-bottom: 42px
-    width: 100%
-.listObject
-    margin-bottom: 6px
-    color: #000000
-    font-size: 22px
-    line-height: 26px
-    color: #575757
-.imageBlock
-    margin-right: 28px
-.itemHeader
-    color: #000000
-    font-size: 24px
-    line-height: 29px
-    margin-bottom: 42px
-    width: 200px
-    text-transform: uppercase
-.itemList
-    list-style: none
-    margin-bottom: 62px
-.textNumber
-    position: absolute
-    text-align: center
-    left: 100px
-    right: auto
-    border: 1px solid #EAEAEA
-    width: 40px
-
-.quantity
-    position: relative
-.cartButtonText
-    color: rgba(120, 120, 120, 0.78)
-    font-size: 18px
-    line-height: 16px
-    text-transform: uppercase
-    padding: 12px 12px
-    border: 1px solid #9c9999
-.cartButtonText:focus
-    outline-style: none
-.cartControls
-    display: flex
-    justify-content: space-between
-    margin-bottom: 129px
-
-.cartButton2:hover
-    box-shadow: 0px 0px 4px 0px black
-.cartControlLink
-    text-decoration: none
-.shippingHeader
-    color: #5e5e5e
-    padding-bottom: 21px
-    text-transform: uppercase
-    font-weight: 300
-    font-size: 16px
-    line-height: 19px
-
-.formCartItem
-    margin-bottom: 21px
-    width: 360px
-    padding: 15px 0px 15px 17px
-    border: 1px solid #A4A4A4
-.formCartItem:hover
-    box-shadow: 0px 0px 4px 0px black
-.formCartItem:focus
-    outline-style: none
-.shippingButton
-    padding: 10px 10px
-    background-color: transparent
-    border: 1px solid #5e5e5e
-    width: 120px
-    color: #4A4A4A
-    border: 1px solid #A4A4A4
-.shippingButton:hover
-    box-shadow: 0px 0px 4px 0px black
-    cursor: pointer
-.shippingButton:focus
-    outline-style: none
-.shipping
-    flex-direction: column
-.blackTextCart
-    color: #5e5e5e
-    padding-left: 32px
-    font-size: 11px
-    line-height: 13px
-    color: #4A4A4A
-.totalLittleText
-    color: #5e5e5e
-    text-transform: uppercase
-    font-size: 11px
-    line-height: 13px
-    color: #4A4A4A
-    padding-bottom: 16px
-.totalBigText
-    color: #5e5e5e
-    text-transform: uppercase
-    font-weight: 300
-    font-size: 16px
-    line-height: 19px
-    border-bottom: 1px solid #b1b1b1
-    padding-bottom: 21px
-    margin-bottom: 17px
-.summaryContent
-    text-align: right
-    background-color: #eaeaea
-    padding: 32px 46px
-.priceTextSummary
-    padding-left: 32px
-.cartSubmitButtonText
-    color: #ffffff
-    text-transform: uppercase
-    font-weight: 300
-    font-size: 16px
-    line-height: 19px
-    padding: 16px 46px
-
-.cartSubmitButton
-    background-color: $theme-color
-    border-style: none
-.cartSubmitButton:focus
-    outline-style: none
-.cartSubmitButton:hover
-    box-shadow: 1px 0px 10px 9px #e8c1ff
-    cursor: pointer
-.summaryContent:hover
-    box-shadow: 1px 0px 10px 9px $theme-color
 
 // registration
 .registrationHeader
@@ -911,8 +725,6 @@ summary:focus
     border: 1px solid #A4A4A4
 .regInput:hover
     box-shadow: 0px 0px 4px 0px black
-.regInput:focus
-    outline-style: none
 .sex
     margin-bottom: 16px
 .sexText
@@ -921,7 +733,7 @@ summary:focus
     font-weight: 300
     font-size: 18px
     line-height: 19px
-.buttonReg
+.buttonRegContent
     font-size: 18px
     line-height: 19px
     padding: 12px 12px
@@ -929,14 +741,12 @@ summary:focus
     background-color: $theme-color
     border-style: none
     width: 200px
-.buttonReg:hover
-    box-shadow: 1px 0px 10px 9px #e8c1ff
-    cursor: pointer
-.buttonReg:focus
-    outline-style: none
+    &:hover
+        box-shadow: 1px 0px 10px 9px #e8c1ff
+        cursor: pointer
 .registrationArticle
     max-width: 500px
-.formRegText 
+.formRegText
     margin-bottom: 16px
     color: #5e5e5e
     font-weight: 300
@@ -948,14 +758,109 @@ summary:focus
     margin-bottom: 32px
 .regArrow
     filter: invert(1)
-.buttonRegContent
-    display: flex
-    justify-content: space-between
 .buttonRegText
     padding-left: 30px
+.logoImage
+    margin-right: 36px
+    margin-left: 36px
+
 /*Down here, working offline sometimes*/
 @font-face
     font-family: 'Lato'
     src: url("fonts/Lato-Regular.ttf") format('truetype')
     font-style: normal
     font-weight: normal
+
+// Media query, adjust for different resolutions
+@media (max-width: 1100px)
+    .container
+        max-width: $containerWidth*0.7
+    .img1
+        width: 232px
+    .textCard
+        transform: scale(0.7)
+        top: 70px
+        left: 40px
+    .downText
+        transform: scale(0.7)
+        top: 15px
+    .logoMan
+        width: 368px
+    .logo
+        min-height: 351px
+    .logoContent
+        height: 351px
+    .img2
+        width: 756px
+@media (max-width: 768px)
+    .pinkText
+        font-size: 16px
+        line-height: 20px
+    .infoBlock
+        padding-top: 64px
+        padding-bottom: 64px
+    .subscription
+        padding-top: 57px
+    .textHello
+        padding-bottom: 48px
+    .textSubscription
+        margin-bottom: 27px
+    .subscriptionForm
+        margin-bottom: 140px
+    .logoImage
+        display: none
+    .logoContent
+        justify-content: center
+    .brandTextContent
+        margin-top: 0px
+        margin-bottom: 0px
+        margin-right: 0px
+    .img2
+        width: 232px
+    .downText
+        top: 0px
+    .emailArea
+        width: 190px
+    .text
+        font-size: 16px
+        line-height: 19px
+    .regContent
+        flex-wrap: wrap
+        justify-content: center
+@media (max-width: 375px)
+    .img2
+        width: 232px
+    .textHeaderLogo
+        font-size: 38px
+        line-height: 46px
+    .text
+        font-size: 16px
+        line-height: 19px
+    .pinkText
+        font-size: 16px
+        line-height: 20px
+    .button
+        padding: 12px 22px 12px 22px
+    .emailArea
+        width: 150px
+    .last
+        display: none
+    .user
+        display: none
+    .textSubscription
+        font-size: 18px
+        line-height: 22px
+    .socialNetworks
+        order: 0
+        margin-bottom: 40px
+        margin-top: 43px
+    .rights
+        order: 1
+    .footerContent
+        justify-content: center
+    .headerCatalogText
+        justify-content: center
+        flex-wrap: wrap
+@media (max-width: 480px)
+    .footerContent
+        justify-content: center
