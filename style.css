@@ -234,6 +234,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 128px;
 }
 
 .formCart {
@@ -254,6 +255,8 @@
   margin-bottom: 40px;
   width: 652px;
   height: 306px;
+  -webkit-box-shadow: 0px 10px 24px 5px rgba(0, 0, 0, 0.45);
+          box-shadow: 0px 10px 24px 5px rgba(0, 0, 0, 0.45);
 }
 
 .item:hover {
@@ -364,7 +367,7 @@
 
 .formCartItem {
   margin-bottom: 21px;
-  width: 380px;
+  width: 360px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 15px 30px 15px 15px;
@@ -429,7 +432,7 @@
 .summaryContent {
   text-align: right;
   background-color: #eaeaea;
-  padding: 32px 46px;
+  padding: 32px 25px;
   margin-bottom: 96px;
 }
 
@@ -437,16 +440,13 @@
   padding-left: 32px;
 }
 
-.cartSubmitButtonText {
+.cartSubmitButton {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 16px;
   line-height: 19px;
   padding: 16px 46px;
-}
-
-.cartSubmitButton {
   background-color: #ff788f;
   border-style: none;
 }
@@ -550,20 +550,35 @@
   line-height: 19px;
 }
 
-.buttonReg {
+.buttonRegContent {
   font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   line-height: 19px;
   padding: 12px 12px;
   color: #ffffff;
   background-color: #ff788f;
   border-style: none;
   width: 200px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.buttonReg:hover {
+.buttonRegContent:hover {
   -webkit-box-shadow: 1px 0px 10px 9px #e8c1ff;
           box-shadow: 1px 0px 10px 9px #e8c1ff;
   cursor: pointer;
+}
+
+.buttonReg {
+  font-size: 18px;
+  line-height: 19px;
+  color: #ffffff;
+  background-color: #ff788f;
+  border-style: none;
+  width: 200px;
 }
 
 .registrationArticle {
@@ -619,10 +634,10 @@ header {
   font-style: normal;
   font-weight: normal;
   outline-style: none;
-  -webkit-transition: color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
-  transition: color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
-  transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
-  transition: transform 0.3s, box-shadow 0.3s, color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  -webkit-transition: color 0.1s, rotate 0.3s, background-color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.1s, rotate 0.3s, background-color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, color 0.1s, rotate 0.3s, background-color 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, color 0.1s, rotate 0.3s, background-color 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
 }
 
 .container {
@@ -630,9 +645,8 @@ header {
   margin: 0 auto;
 }
 
-.frontHeader {
-  padding-top: 18px;
-  padding-bottom: 18px;
+.bar {
+  padding-bottom: 0px;
 }
 
 .frontMenu {
@@ -1239,20 +1253,33 @@ header {
   margin-bottom: 30px;
 }
 
+.hiddenHeader {
+  display: none;
+}
+
 .socialCards {
+  display: block;
   width: 32px;
   height: 32px;
   background-color: #ffffff;
-  padding: 3px 3px;
-  margin-right: 3px;
+  color: #222222;
+  font-size: 25px;
+  margin-right: 7px;
+  text-decoration: none;
+  text-align: center;
 }
 
 .socialCards:hover {
-  background-color: #08af8d;
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+  background-color: #ff788f;
+  color: #ffffff;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.socialNetworks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 footer {
@@ -1298,17 +1325,49 @@ footer {
   height: 36px;
 }
 
-.newList {
+.newList-bar {
   position: relative;
-  padding: 12px;
+  padding: 20px 12px 20px 12px;
 }
 
-.newList:hover {
+.newList-bar:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.newList:hover .mega-box {
+.newList-bar:hover .mega-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.newList-user {
+  position: relative;
+  padding: 12px;
+}
+
+.newList-user:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.newList-user:hover .mega-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.newList-last {
+  position: relative;
+  padding: 12px;
+}
+
+.newList-last:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.newList-last:hover .mega-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1693,7 +1752,7 @@ summary:focus {
   line-height: 19px;
 }
 
-.buttonReg {
+.buttonRegContent {
   font-size: 18px;
   line-height: 19px;
   padding: 12px 12px;
@@ -1703,7 +1762,7 @@ summary:focus {
   width: 200px;
 }
 
-.buttonReg:hover {
+.buttonRegContent:hover {
   -webkit-box-shadow: 1px 0px 10px 9px #e8c1ff;
           box-shadow: 1px 0px 10px 9px #e8c1ff;
   cursor: pointer;
@@ -1730,15 +1789,6 @@ summary:focus {
 .regArrow {
   -webkit-filter: invert(1);
           filter: invert(1);
-}
-
-.buttonRegContent {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .buttonRegText {

@@ -18,16 +18,16 @@ header
     outline-style: none
     transition: transform .3s,
     box-shadow .3s,
-    color .3s
-    rotate .3s
+    color .1s,
+    rotate .3s,
+    background-color .3s 
 
 .container
     max-width: $containerWidth
     margin: 0 auto
 
-.frontHeader
-    padding-top: 18px
-    padding-bottom: 18px
+.bar
+    padding-bottom: 0px
 
 .frontMenu
     display: flex
@@ -427,18 +427,24 @@ header
     line-height: 19px
     color: #FBFBFB
     margin-bottom: 30px
-
+.hiddenHeader
+    display: none
 .socialCards
+    display: block
     width: 32px
     height: 32px
     background-color: #ffffff
-    padding: 3px 3px
-    margin-right: 3px
+    color: #222222
+    font-size: 25px
+    margin-right: 7px
+    text-decoration: none
+    text-align: center
     &:hover
-        background-color: #08af8d
-        filter: invert(100%)
+        background-color: $theme-color
+        color: #ffffff
         transform: scale(1.1)
-
+.socialNetworks
+    display: flex
 footer
     background-color: $dark_theme
 
@@ -469,12 +475,27 @@ footer
     height: 36px
 
 .newList
-    position: relative
-    padding: 12px
-    &:hover
-        transform: scale(1.1)
-    &:hover .mega-box
-        display: flex
+    &-bar
+        position: relative
+        padding: 20px 12px 20px 12px
+        &:hover
+            transform: scale(1.1)
+        &:hover .mega-box
+            display: flex
+    &-user
+        position: relative
+        padding: 12px
+        &:hover
+            transform: scale(1.1)
+        &:hover .mega-box
+            display: flex
+    &-last
+        position: relative
+        padding: 12px
+        &:hover
+            transform: scale(1.1)
+        &:hover .mega-box
+            display: flex
 
 .last:hover .mega-box
     right: 0
@@ -712,7 +733,7 @@ summary:focus
     font-weight: 300
     font-size: 18px
     line-height: 19px
-.buttonReg
+.buttonRegContent
     font-size: 18px
     line-height: 19px
     padding: 12px 12px
@@ -737,9 +758,6 @@ summary:focus
     margin-bottom: 32px
 .regArrow
     filter: invert(1)
-.buttonRegContent
-    display: flex
-    justify-content: space-between
 .buttonRegText
     padding-left: 30px
 .logoImage
@@ -834,7 +852,7 @@ summary:focus
         line-height: 22px
     .socialNetworks
         order: 0
-        margin-bottom: 40px 
+        margin-bottom: 40px
         margin-top: 43px
     .rights
         order: 1
@@ -846,4 +864,3 @@ summary:focus
 @media (max-width: 480px)
     .footerContent
         justify-content: center
-
