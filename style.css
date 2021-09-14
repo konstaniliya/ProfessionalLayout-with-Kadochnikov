@@ -1894,6 +1894,9 @@ summary:focus {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .item {
+    width: 530px;
+  }
 }
 
 @media (max-width: 375px) {
@@ -1918,10 +1921,10 @@ summary:focus {
   .emailArea {
     width: 150px;
   }
-  .last {
+  .newList-last {
     display: none;
   }
-  .user {
+  .newList-user {
     display: none;
   }
   .textSubscription {
